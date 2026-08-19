@@ -8,16 +8,16 @@ function GradeEvaluation() {
 
   function getRemarkClass(remarks) {
     if (remarks === "Excellent") {
-      return "remark-excellent";
+      return "grade-excellent";
     } else if (remarks === "Very Good") {
-      return "remark-very-good";
+      return "grade-very-good";
     } else if (remarks === "Good") {
-      return "remark-good";
+      return "grade-good";
     } else if (remarks === "Passed") {
-      return "remark-passed";
+      return "grade-passed";
     }
 
-    return "remark-failed";
+    return "grade-failed";
   }
 
   function handleEvaluate(event) {
@@ -70,51 +70,14 @@ function GradeEvaluation() {
   }
 
   return (
-    <section className="activity-detail">
-      <div className="activity-heading">
-        <span className="large-activity-number">2</span>
-        <div>
-          <p className="eyebrow">Activity 2</p>
+    <section className="grade-page">
+      <div className="grade-portal-card">
+        <div className="grade-card-header">
           <h2>Student Grade Evaluation</h2>
-        </div>
-      </div>
-
-      <p className="activity-description">
-        Evaluate a score into Excellent to Failed, with range validation.
-      </p>
-
-      <div className="activity-info-grid">
-        <div className="info-panel tinted-panel">
-          <h3>Inputs & Buttons</h3>
-          <ul>
-            <li>Student Name input</li>
-            <li>Score input</li>
-            <li>Evaluate button</li>
-            <li>Clear button</li>
-          </ul>
+          <p>Activity 2</p>
         </div>
 
-        <div className="info-panel">
-          <h3>Conditions</h3>
-          <ul className="condition-list">
-            <li><strong>90 - 100</strong> Excellent</li>
-            <li><strong>85 - 89</strong> Very Good</li>
-            <li><strong>80 - 84</strong> Good</li>
-            <li><strong>75 - 79</strong> Passed</li>
-            <li><strong>Below 75</strong> Failed</li>
-            <li><strong>&lt; 0 or &gt; 100</strong> Invalid score</li>
-          </ul>
-        </div>
-
-        <div className="info-panel result-preview-panel">
-          <h3>Result Panel Shows</h3>
-          <p>Student Name</p>
-          <p>Score</p>
-          <p>Remarks</p>
-        </div>
-      </div>
-
-      <div className="card grade-card">
+        <div className="grade-card-body">
         <form onSubmit={handleEvaluate} className="form-grid">
           <label>
             Student Name
@@ -135,25 +98,18 @@ function GradeEvaluation() {
         {error && <p className="feedback error-feedback">{error}</p>}
 
         {result && (
-          <div className="result-panel grade-result">
-            <p><span>Student Name</span><strong>{result.studentName}</strong></p>
-            <p><span>Score</span><strong>{result.score}</strong></p>
-            <p>
-              <span>Remarks</span>
-              <strong className={`remark-badge ${getRemarkClass(result.remarks)}`}>{result.remarks}</strong>
-            </p>
+          <div className={`grade-result-card ${getRemarkClass(result.remarks)}`}>
+            <p>Student Name</p>
+            <strong>{result.studentName}</strong>
+
+            <p>Score</p>
+            <strong>{result.score}</strong>
+
+            <p>Remarks</p>
+            <strong className="grade-remark">{result.remarks}</strong>
           </div>
         )}
       </div>
-
-      <div className="demonstrates-panel">
-        <strong>Demonstrates</strong>
-        <span>useState</span>
-        <span>onChange</span>
-        <span>onClick / onSubmit</span>
-        <span>Input validation</span>
-        <span>if / else if / else</span>
-        <span>Conditional rendering</span>
       </div>
     </section>
   );
