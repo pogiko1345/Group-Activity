@@ -20,7 +20,7 @@ function App() {
       return <ElectricityBill />;
     }
 
-    return <Home />;
+    return <Home setActivePage={setActivePage} />;
   }
 
   return (
