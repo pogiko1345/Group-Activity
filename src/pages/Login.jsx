@@ -21,32 +21,38 @@ function Login() {
   }
 
   return (
-    <section className="card">
-      <p className="eyebrow">Activity 1</p>
-      <h2>Login Authentication</h2>
-
-      {!isLoggedIn ? (
-        <form onSubmit={handleLogin} className="form-grid">
-          <label>
-            Username
-            <input value={username} onChange={(event) => setUsername(event.target.value)} placeholder="Enter username" />
-          </label>
-
-          <label>
-            Password
-            <input type="password" value={password} onChange={(event) => setPassword(event.target.value)} placeholder="Enter password" />
-          </label>
-
-          <button type="submit">Login</button>
-        </form>
-      ) : (
-        <div className="result-panel">
-          <strong>Welcome!</strong>
-          <button type="button" onClick={handleLogout}>Logout</button>
+    <section className="activity-page">
+      <div className="mini-card">
+        <div className="mini-card-header">
+          <p>Activity 1</p>
+          <h2>Login Authentication</h2>
         </div>
-      )}
 
-      {message && <p className="feedback">{message}</p>}
+        <div className="mini-card-body">
+          {!isLoggedIn ? (
+            <form onSubmit={handleLogin} className="form-grid">
+              <label>
+                Username
+                <input value={username} onChange={(event) => setUsername(event.target.value)} placeholder="Enter username" />
+              </label>
+
+              <label>
+                Password
+                <input type="password" value={password} onChange={(event) => setPassword(event.target.value)} placeholder="Enter password" />
+              </label>
+
+              <button type="submit">Login</button>
+            </form>
+          ) : (
+            <div className="result-panel">
+              <strong>Welcome!</strong>
+              <button type="button" onClick={handleLogout}>Logout</button>
+            </div>
+          )}
+
+          {message && <p className="feedback">{message}</p>}
+        </div>
+      </div>
     </section>
   );
 }

@@ -25,36 +25,42 @@ function ElectricityBill() {
   }
 
   return (
-    <section className="card">
-      <p className="eyebrow">Activity 4</p>
-      <h2>Electricity Bill Calculator</h2>
-
-      <form onSubmit={handleCalculate} className="form-grid">
-        <label>
-          Customer Name
-          <input value={customerName} onChange={(event) => setCustomerName(event.target.value)} placeholder="Enter customer name" />
-        </label>
-
-        <label>
-          Consumption (kWh)
-          <input type="number" value={consumption} onChange={(event) => setConsumption(event.target.value)} placeholder="Enter kWh" />
-        </label>
-
-        <div className="button-row">
-          <button type="submit">Calculate Bill</button>
-          <button type="button" className="secondary" onClick={handleClear}>Clear</button>
+    <section className="activity-page">
+      <div className="mini-card">
+        <div className="mini-card-header">
+          <p>Activity 4</p>
+          <h2>Electricity Bill Calculator</h2>
         </div>
-      </form>
 
-      {bill && (
-        <div className="result-panel">
-          <p>Customer: {bill.customerName}</p>
-          <p>Consumption: {bill.consumption}</p>
-          <p>Rate Applied: {bill.rate}</p>
-          <p>Total Bill: {bill.total}</p>
-          <p>Usage Status: {bill.status}</p>
+        <div className="mini-card-body">
+          <form onSubmit={handleCalculate} className="form-grid">
+            <label>
+              Customer Name
+              <input value={customerName} onChange={(event) => setCustomerName(event.target.value)} placeholder="Enter customer name" />
+            </label>
+
+            <label>
+              Consumption (kWh)
+              <input type="number" value={consumption} onChange={(event) => setConsumption(event.target.value)} placeholder="Enter kWh" />
+            </label>
+
+            <div className="button-row">
+              <button type="submit">Calculate Bill</button>
+              <button type="button" className="secondary" onClick={handleClear}>Clear</button>
+            </div>
+          </form>
+
+          {bill && (
+            <div className="result-panel">
+              <p>Customer: {bill.customerName}</p>
+              <p>Consumption: {bill.consumption}</p>
+              <p>Rate Applied: {bill.rate}</p>
+              <p>Total Bill: {bill.total}</p>
+              <p>Usage Status: {bill.status}</p>
+            </div>
+          )}
         </div>
-      )}
+      </div>
     </section>
   );
 }
