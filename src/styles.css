@@ -251,6 +251,103 @@ button.secondary {
   background: #1454b8;
 }
 
+.grade-page {
+  display: flex;
+  justify-content: center;
+}
+
+.grade-portal-card {
+  width: min(100%, 416px);
+  overflow: hidden;
+  border-radius: 14px;
+  background: white;
+  box-shadow: 0 2px 8px rgba(35, 47, 74, 0.14);
+}
+
+.grade-card-header {
+  padding: 24px;
+  color: white;
+  background: #5635f6;
+}
+
+.grade-card-header h2 {
+  margin: 0 0 8px;
+  font-size: 22px;
+}
+
+.grade-card-header p {
+  margin: 0;
+}
+
+.grade-card-body {
+  padding: 24px;
+}
+
+.grade-card-body .form-grid {
+  margin-top: 0;
+}
+
+.grade-card-body .button-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.grade-card-body button {
+  width: 100%;
+}
+
+.grade-result-card {
+  display: grid;
+  gap: 6px;
+  margin-top: 24px;
+  padding: 22px 20px;
+  border: 1px solid currentColor;
+  border-radius: 12px;
+}
+
+.grade-result-card p {
+  margin: 10px 0 0;
+  font-size: 13px;
+}
+
+.grade-result-card p:first-child {
+  margin-top: 0;
+}
+
+.grade-result-card strong {
+  font-size: 15px;
+}
+
+.grade-result-card .grade-remark {
+  font-size: 24px;
+}
+
+.grade-excellent {
+  color: #047857;
+  background: #ecfdf5;
+}
+
+.grade-very-good {
+  color: #1d4ed8;
+  background: #eff6ff;
+}
+
+.grade-good {
+  color: #5b21b6;
+  background: #f5f3ff;
+}
+
+.grade-passed {
+  color: #b45309;
+  background: #fffbeb;
+}
+
+.grade-failed {
+  color: #dc2626;
+  background: #fff1f2;
+}
+
 .activity-detail {
   display: grid;
   gap: 18px;
