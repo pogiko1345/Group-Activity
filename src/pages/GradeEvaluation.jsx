@@ -98,7 +98,7 @@ function GradeEvaluation() {
           {error && <p className="feedback error-feedback">{error}</p>}
 
           {result && (
-            <div className={`grade-result-card ${getRemarkClass(result.remarks)}`}>
+          <div className="grade-result-card">
               <p>Student Name</p>
               <strong>{result.studentName}</strong>
 
@@ -106,7 +106,7 @@ function GradeEvaluation() {
               <strong>{result.score}</strong>
 
               <p>Remarks</p>
-              <strong className="grade-remark">{result.remarks}</strong>
+            <strong className={`grade-remark ${getRemarkClass(result.remarks)}`}>{result.remarks}</strong>
             </div>
           )}
         </div>

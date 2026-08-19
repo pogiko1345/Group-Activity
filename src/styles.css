@@ -324,8 +324,9 @@ button.secondary:hover {
   gap: 6px;
   margin-top: 24px;
   padding: 22px 20px;
-  border: 1px solid currentColor;
+  border: 1px solid #222222;
   border-radius: 12px;
+  background: #f7f7f7;
 }
 
 .grade-result-card p {
@@ -346,28 +347,28 @@ button.secondary:hover {
 }
 
 .grade-excellent {
-  color: #111111;
-  background: #eeeeee;
+  color: #047857;
+  background: transparent;
 }
 
 .grade-very-good {
-  color: #111111;
-  background: #eeeeee;
+  color: #047857;
+  background: transparent;
 }
 
 .grade-good {
-  color: #111111;
-  background: #eeeeee;
+  color: #047857;
+  background: transparent;
 }
 
 .grade-passed {
-  color: #111111;
-  background: #eeeeee;
+  color: #047857;
+  background: transparent;
 }
 
 .grade-failed {
-  color: #111111;
-  background: #eeeeee;
+  color: #dc2626;
+  background: transparent;
 }
 
 .activity-detail {
