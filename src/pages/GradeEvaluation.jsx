@@ -70,46 +70,46 @@ function GradeEvaluation() {
   }
 
   return (
-    <section className="grade-page">
-      <div className="grade-portal-card">
-        <div className="grade-card-header">
-          <h2>Student Grade Evaluation</h2>
+    <section className="activity-page">
+      <div className="mini-card">
+        <div className="mini-card-header">
           <p>Activity 2</p>
+          <h2>Student Grade Evaluation</h2>
         </div>
 
-        <div className="grade-card-body">
-        <form onSubmit={handleEvaluate} className="form-grid">
-          <label>
-            Student Name
-            <input value={studentName} onChange={(event) => setStudentName(event.target.value)} placeholder="Enter student name" />
-          </label>
+        <div className="mini-card-body">
+          <form onSubmit={handleEvaluate} className="form-grid">
+            <label>
+              Student Name
+              <input value={studentName} onChange={(event) => setStudentName(event.target.value)} placeholder="Enter student name" />
+            </label>
 
-          <label>
-            Score
-            <input type="number" min="0" max="100" value={score} onChange={(event) => setScore(event.target.value)} placeholder="0 - 100" />
-          </label>
+            <label>
+              Score
+              <input type="number" min="0" max="100" value={score} onChange={(event) => setScore(event.target.value)} placeholder="0 - 100" />
+            </label>
 
-          <div className="button-row">
-            <button type="submit">Evaluate</button>
-            <button type="button" className="secondary" onClick={handleClear}>Clear</button>
-          </div>
-        </form>
+            <div className="button-row">
+              <button type="submit">Evaluate</button>
+              <button type="button" className="secondary" onClick={handleClear}>Clear</button>
+            </div>
+          </form>
 
-        {error && <p className="feedback error-feedback">{error}</p>}
+          {error && <p className="feedback error-feedback">{error}</p>}
 
-        {result && (
-          <div className={`grade-result-card ${getRemarkClass(result.remarks)}`}>
-            <p>Student Name</p>
-            <strong>{result.studentName}</strong>
+          {result && (
+            <div className={`grade-result-card ${getRemarkClass(result.remarks)}`}>
+              <p>Student Name</p>
+              <strong>{result.studentName}</strong>
 
-            <p>Score</p>
-            <strong>{result.score}</strong>
+              <p>Score</p>
+              <strong>{result.score}</strong>
 
-            <p>Remarks</p>
-            <strong className="grade-remark">{result.remarks}</strong>
-          </div>
-        )}
-      </div>
+              <p>Remarks</p>
+              <strong className="grade-remark">{result.remarks}</strong>
+            </div>
+          )}
+        </div>
       </div>
     </section>
   );

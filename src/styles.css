@@ -6,7 +6,7 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   color: #10182f;
-  background: #edf2f9;
+  background: #f3f6fb;
 }
 
 button,
@@ -30,7 +30,7 @@ input {
   background: #ffffff;
   color: #172033;
   border-bottom: 1px solid #d9e1ed;
-  box-shadow: 0 2px 10px rgba(40, 55, 90, 0.08);
+  box-shadow: 0 1px 8px rgba(40, 55, 90, 0.06);
 }
 
 .navbar h1 {
@@ -69,6 +69,7 @@ input {
   color: #4a5874;
   background: transparent;
   cursor: pointer;
+  transition: 160ms ease;
 }
 
 .navbar button.active,
@@ -80,7 +81,7 @@ input {
 .page-shell {
   width: min(1216px, calc(100% - 40px));
   margin: 0 auto;
-  padding: 64px 0 80px;
+  padding: 56px 0 76px;
 }
 
 .card {
@@ -114,7 +115,6 @@ h2 {
 .form-grid {
   display: grid;
   gap: 16px;
-  margin-top: 22px;
 }
 
 label {
@@ -130,6 +130,13 @@ input {
   padding: 13px 14px;
   color: #172033;
   background: #f8fbff;
+  outline: none;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+input:focus {
+  border-color: #5635f6;
+  box-shadow: 0 0 0 3px rgba(86, 53, 246, 0.12);
 }
 
 button {
@@ -140,11 +147,21 @@ button {
   color: white;
   background: #5635f6;
   cursor: pointer;
+  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(86, 53, 246, 0.18);
 }
 
 button.secondary {
-  color: #5635f6;
-  background: #eeebff;
+  color: #172033;
+  background: #eef2f7;
+}
+
+button.secondary:hover {
+  box-shadow: 0 8px 18px rgba(30, 41, 59, 0.08);
 }
 
 .home-page {
@@ -227,10 +244,10 @@ button.secondary {
 .feedback,
 .result-panel {
   margin-top: 18px;
-  border-radius: 14px;
+  border-radius: 12px;
   padding: 16px;
-  background: #eef5ff;
-  border: 1px solid #c8d7ee;
+  background: #f8fbff;
+  border: 1px solid #d8e4f7;
 }
 
 .result-panel p {
@@ -248,52 +265,55 @@ button.secondary {
   display: block;
   height: 100%;
   border-radius: inherit;
-  background: #1454b8;
+  background: #5635f6;
 }
 
-.grade-page {
+.activity-page {
   display: flex;
   justify-content: center;
 }
 
-.grade-portal-card {
+.mini-card {
   width: min(100%, 416px);
   overflow: hidden;
   border-radius: 14px;
   background: white;
-  box-shadow: 0 2px 8px rgba(35, 47, 74, 0.14);
+  border: 1px solid #d9e1ed;
+  box-shadow: 0 10px 24px rgba(35, 47, 74, 0.08);
 }
 
-.grade-card-header {
-  padding: 24px;
+.mini-card-header {
+  padding: 22px 24px;
   color: white;
-  background: #5635f6;
+  background: linear-gradient(135deg, #5635f6, #6847ff);
 }
 
-.grade-card-header h2 {
+.mini-card-header h2 {
   margin: 0 0 8px;
   font-size: 22px;
 }
 
-.grade-card-header p {
+.mini-card-header p {
   margin: 0;
+  font-size: 14px;
+  opacity: 0.9;
 }
 
-.grade-card-body {
+.mini-card-body {
   padding: 24px;
 }
 
-.grade-card-body .form-grid {
+.mini-card-body .form-grid {
   margin-top: 0;
 }
 
-.grade-card-body .button-row {
+.mini-card-body .button-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
 }
 
-.grade-card-body button {
+.mini-card-body button {
   width: 100%;
 }
 
