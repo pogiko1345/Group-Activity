@@ -5,8 +5,8 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  color: #10182f;
-  background: #f3f6fb;
+  color: #111111;
+  background: #f2f2f2;
 }
 
 button,
@@ -28,9 +28,9 @@ input {
   gap: 20px;
   padding: 16px max(24px, calc((100vw - 1216px) / 2));
   background: #ffffff;
-  color: #172033;
-  border-bottom: 1px solid #d9e1ed;
-  box-shadow: 0 1px 8px rgba(40, 55, 90, 0.06);
+  color: #111111;
+  border-bottom: 1px solid #1f1f1f;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
 }
 
 .navbar h1 {
@@ -51,8 +51,8 @@ input {
   width: 36px;
   height: 36px;
   border-radius: 8px;
-  color: white;
-  background: #5635f6;
+  color: #ffffff;
+  background: #111111;
   font-weight: 800;
 }
 
@@ -63,10 +63,10 @@ input {
 }
 
 .navbar button {
-  border: 0;
+  border: 1px solid transparent;
   border-radius: 7px;
   padding: 11px 17px;
-  color: #4a5874;
+  color: #333333;
   background: transparent;
   cursor: pointer;
   transition: 160ms ease;
@@ -74,8 +74,9 @@ input {
 
 .navbar button.active,
 .navbar button:hover {
-  background: #5635f6;
-  color: white;
+  border-color: #111111;
+  background: #111111;
+  color: #ffffff;
 }
 
 .page-shell {
@@ -86,10 +87,10 @@ input {
 
 .card {
   padding: 28px;
-  border: 1px solid #d8e4f7;
-  border-radius: 18px;
-  background: white;
-  box-shadow: 0 20px 50px rgba(35, 67, 120, 0.12);
+  border: 1px solid #1f1f1f;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
 }
 
 .hero-card {
@@ -101,7 +102,7 @@ input {
 
 .eyebrow {
   margin: 0 0 8px;
-  color: #1454b8;
+  color: #444444;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -125,39 +126,39 @@ label {
 
 input {
   width: 100%;
-  border: 1px solid #c8d7ee;
-  border-radius: 12px;
+  border: 1px solid #222222;
+  border-radius: 8px;
   padding: 13px 14px;
-  color: #172033;
-  background: #f8fbff;
+  color: #111111;
+  background: #fafafa;
   outline: none;
   transition: border-color 160ms ease, box-shadow 160ms ease;
 }
 
 input:focus {
-  border-color: #5635f6;
-  box-shadow: 0 0 0 3px rgba(86, 53, 246, 0.12);
+  border-color: #000000;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08);
 }
 
 button {
-  border: 0;
-  border-radius: 12px;
+  border: 1px solid #111111;
+  border-radius: 8px;
   padding: 13px 18px;
   font-weight: 700;
-  color: white;
-  background: #5635f6;
+  color: #ffffff;
+  background: #111111;
   cursor: pointer;
   transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
 }
 
 button:hover {
   transform: translateY(-1px);
-  box-shadow: 0 8px 18px rgba(86, 53, 246, 0.18);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.14);
 }
 
 button.secondary {
-  color: #172033;
-  background: #eef2f7;
+  color: #111111;
+  background: #eeeeee;
 }
 
 button.secondary:hover {
@@ -183,7 +184,7 @@ button.secondary:hover {
 
 .home-hero p {
   margin: 0;
-  color: #51617e;
+  color: #555555;
   font-size: 18px;
   line-height: 1.55;
 }
@@ -200,10 +201,10 @@ button.secondary:hover {
   gap: 16px;
   align-content: start;
   padding: 24px;
-  border: 1px solid #d9e1ed;
-  border-radius: 14px;
+  border: 1px solid #222222;
+  border-radius: 10px;
   background: #ffffff;
-  box-shadow: 0 2px 8px rgba(35, 47, 74, 0.08);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.06);
 }
 
 .activity-number {
@@ -211,9 +212,10 @@ button.secondary:hover {
   place-items: center;
   width: 40px;
   height: 40px;
+  border: 1px solid #111111;
   border-radius: 8px;
-  color: #5635f6;
-  background: #e4e8ff;
+  color: #111111;
+  background: #eeeeee;
   font-weight: 800;
 }
 
@@ -225,7 +227,7 @@ button.secondary:hover {
 .activity-card p {
   min-height: 48px;
   margin: 0;
-  color: #4f6080;
+  color: #555555;
   line-height: 1.5;
 }
 
@@ -244,10 +246,10 @@ button.secondary:hover {
 .feedback,
 .result-panel {
   margin-top: 18px;
-  border-radius: 12px;
+  border-radius: 8px;
   padding: 16px;
-  background: #f8fbff;
-  border: 1px solid #d8e4f7;
+  background: #f7f7f7;
+  border: 1px solid #222222;
 }
 
 .result-panel p {
@@ -258,14 +260,14 @@ button.secondary:hover {
   height: 10px;
   overflow: hidden;
   border-radius: 999px;
-  background: #dbe7f8;
+  background: #dddddd;
 }
 
 .strength-bar span {
   display: block;
   height: 100%;
   border-radius: inherit;
-  background: #5635f6;
+  background: #111111;
 }
 
 .activity-page {
@@ -276,16 +278,16 @@ button.secondary:hover {
 .mini-card {
   width: min(100%, 416px);
   overflow: hidden;
-  border-radius: 14px;
-  background: white;
-  border: 1px solid #d9e1ed;
-  box-shadow: 0 10px 24px rgba(35, 47, 74, 0.08);
+  border-radius: 10px;
+  background: #ffffff;
+  border: 1px solid #111111;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
 }
 
 .mini-card-header {
   padding: 22px 24px;
-  color: white;
-  background: linear-gradient(135deg, #5635f6, #6847ff);
+  color: #ffffff;
+  background: #111111;
 }
 
 .mini-card-header h2 {
@@ -344,28 +346,28 @@ button.secondary:hover {
 }
 
 .grade-excellent {
-  color: #047857;
-  background: #ecfdf5;
+  color: #111111;
+  background: #eeeeee;
 }
 
 .grade-very-good {
-  color: #1d4ed8;
-  background: #eff6ff;
+  color: #111111;
+  background: #eeeeee;
 }
 
 .grade-good {
-  color: #5b21b6;
-  background: #f5f3ff;
+  color: #111111;
+  background: #eeeeee;
 }
 
 .grade-passed {
-  color: #b45309;
-  background: #fffbeb;
+  color: #111111;
+  background: #eeeeee;
 }
 
 .grade-failed {
-  color: #dc2626;
-  background: #fff1f2;
+  color: #111111;
+  background: #eeeeee;
 }
 
 .activity-detail {
@@ -392,8 +394,8 @@ button.secondary:hover {
   height: 60px;
   flex: 0 0 auto;
   border-radius: 50%;
-  color: white;
-  background: #5064dc;
+  color: #ffffff;
+  background: #111111;
   font-size: 28px;
   font-weight: 800;
 }
@@ -423,7 +425,7 @@ button.secondary:hover {
 .info-panel h3,
 .demonstrates-panel strong {
   margin: 0 0 18px;
-  color: #5064dc;
+  color: #333333;
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -431,7 +433,7 @@ button.secondary:hover {
 
 .tinted-panel,
 .demonstrates-panel {
-  background: #e9efff;
+  background: #eeeeee;
 }
 
 .info-panel ul {
@@ -446,7 +448,7 @@ button.secondary:hover {
 }
 
 .info-panel li::marker {
-  color: #5064dc;
+  color: #111111;
   font-size: 20px;
 }
 
@@ -463,19 +465,19 @@ button.secondary:hover {
 .condition-list strong::after {
   content: ">";
   margin-left: 8px;
-  color: #5064dc;
+  color: #111111;
 }
 
 .result-preview-panel {
   display: grid;
   align-content: start;
   gap: 44px;
-  color: #dbe7ff;
-  background: #152244;
+  color: #ffffff;
+  background: #111111;
 }
 
 .result-preview-panel h3 {
-  color: #67d8ff;
+  color: #ffffff;
 }
 
 .result-preview-panel p {
@@ -521,12 +523,12 @@ button.secondary:hover {
 
 .remark-very-good {
   color: #1d4ed8;
-  background: #dbeafe;
+  background: #eeeeee;
 }
 
 .remark-good {
   color: #6d28d9;
-  background: #ede9fe;
+  background: #eeeeee;
 }
 
 .remark-passed {
@@ -540,9 +542,9 @@ button.secondary:hover {
 }
 
 .error-feedback {
-  color: #b91c1c;
-  background: #fff1f2;
-  border-color: #fecdd3;
+  color: #111111;
+  background: #eeeeee;
+  border-color: #111111;
 }
 
 .demonstrates-panel {
