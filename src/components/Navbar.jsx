@@ -1,7 +1,10 @@
 function Navbar({ activePage, setActivePage }) {
   return (
     <header className="navbar">
-      <h1>React Activity Portal</h1>
+      <div className="brand">
+        <span>R</span>
+        <h1>React Activity Portal</h1>
+      </div>
 
       <nav>
         <button className={activePage === "home" ? "active" : ""} onClick={() => setActivePage("home")}>

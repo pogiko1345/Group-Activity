@@ -4,24 +4,59 @@ function ElectricityBill() {
   const [customerName, setCustomerName] = useState("");
   const [consumption, setConsumption] = useState("");
   const [bill, setBill] = useState(null);
+  const [error, setError] = useState("");
 
   function handleCalculate(event) {
     event.preventDefault();
 
-    // TODO: Convert consumption to a number.
-    // TODO: Decide rate using if / else if / else.
-    // TODO: Calculate total bill and usage status.
+    const trimmedName = customerName.trim();
+    const numericConsumption = Number(consumption);
+
+    if (trimmedName === "" || consumption === "") {
+      setBill(null);
+      setError("Please enter the customer name and consumption.");
+      return;
+    } else if (Number.isNaN(numericConsumption)) {
+      setBill(null);
+      setError("Please enter a valid consumption value.");
+      return;
+    } else if (numericConsumption < 0) {
+      setBill(null);
+      setError("Consumption cannot be negative.");
+      return;
+    }
+
+    let rate = 0;
+    let status = "";
+
+    if (numericConsumption <= 100) {
+      rate = 5;
+      status = "Low Usage";
+    } else if (numericConsumption <= 300) {
+      rate = 7.5;
+      status = "Moderate Usage";
+    } else {
+      rate = 10;
+      status = "High Usage";
+    }
+
+    const total = numericConsumption * rate;
+
     setBill({
-      customerName,
-      consumption,
-      rate: "TODO",
-      total: "TODO",
-      status: "TODO"
+      customerName: trimmedName,
+      consumption: `${numericConsumption} kWh`,
+      rate: `PHP ${rate.toFixed(2)} per kWh`,
+      total: `PHP ${total.toFixed(2)}`,
+      status
     });
+    setError("");
   }
 
   function handleClear() {
-    // TODO: Clear all fields and bill result.
+    setCustomerName("");
+    setConsumption("");
+    setBill(null);
+    setError("");
   }
 
   return (
@@ -41,7 +76,7 @@ function ElectricityBill() {
 
             <label>
               Consumption (kWh)
-              <input type="number" value={consumption} onChange={(event) => setConsumption(event.target.value)} placeholder="Enter kWh" />
+              <input type="number" min="0" step="0.01" value={consumption} onChange={(event) => setConsumption(event.target.value)} placeholder="Enter kWh" />
             </label>
 
             <div className="button-row">
@@ -49,6 +84,8 @@ function ElectricityBill() {
               <button type="button" className="secondary" onClick={handleClear}>Clear</button>
             </div>
           </form>
+
+          {error && <p className="feedback error-feedback">{error}</p>}
 
           {bill && (
             <div className="result-panel">

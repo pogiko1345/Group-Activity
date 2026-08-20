@@ -9,15 +9,21 @@ function Login() {
   function handleLogin(event) {
     event.preventDefault();
 
-    // TODO: Add if / else logic:
-    // 1. both fields empty
-    // 2. correct credentials
-    // 3. incorrect credentials
-    setMessage("TODO: Add login validation here.");
+    if (username.trim() === "" && password.trim() === "") {
+      setMessage("Please enter username and password.");
+    } else if (username === "admin" && password === "admin123") {
+      setMessage("Login successful!");
+      setIsLoggedIn(true);
+    } else {
+      setMessage("Invalid username or password.");
+    }
   }
 
   function handleLogout() {
-    // TODO: Return to the login form and clear the message.
+    setIsLoggedIn(false);
+    setUsername("");
+    setPassword("");
+    setMessage("");
   }
 
   return (
@@ -33,12 +39,21 @@ function Login() {
             <form onSubmit={handleLogin} className="form-grid">
               <label>
                 Username
-                <input value={username} onChange={(event) => setUsername(event.target.value)} placeholder="Enter username" />
+                <input
+                  value={username}
+                  onChange={(event) => setUsername(event.target.value)}
+                  placeholder="Enter username"
+                />
               </label>
 
               <label>
                 Password
-                <input type="password" value={password} onChange={(event) => setPassword(event.target.value)} placeholder="Enter password" />
+                <input
+                  type="password"
+                  value={password}
+                  onChange={(event) => setPassword(event.target.value)}
+                  placeholder="Enter password"
+                />
               </label>
 
               <button type="submit">Login</button>
@@ -46,7 +61,9 @@ function Login() {
           ) : (
             <div className="result-panel">
               <strong>Welcome!</strong>
-              <button type="button" onClick={handleLogout}>Logout</button>
+              <button type="button" onClick={handleLogout}>
+                Logout
+              </button>
             </div>
           )}
 
