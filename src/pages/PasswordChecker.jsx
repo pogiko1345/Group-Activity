@@ -4,19 +4,35 @@ function PasswordChecker() {
   const [password, setPassword] = useState("");
   const [status, setStatus] = useState("");
   const [message, setMessage] = useState("");
+  const [strength, setStrength] = useState("0%");
 
   function handleCheck(event) {
     event.preventDefault();
 
-    // TODO: Check password.length.
-    // TODO: Set Weak, Medium, or Strong.
-    // TODO: Set the correct status message.
-    setStatus("TODO");
-    setMessage("TODO: Add password strength logic.");
+    if (password.length === 0) {
+      setStatus("");
+      setMessage("Please enter a password.");
+      setStrength("0%");
+    } else if (password.length < 6) {
+      setStatus("Weak Password");
+      setMessage("Status: Weak – Create a stronger password.");
+      setStrength("33%");
+    } else if (password.length <= 9) {
+      setStatus("Medium Password");
+      setMessage("Status: Weak – Create a stronger password.");
+      setStrength("66%");
+    } else {
+      setStatus("Strong Password");
+      setMessage("Status: Strong – You can use this password.");
+      setStrength("100%");
+    }
   }
 
   function handleClear() {
-    // TODO: Clear password, status, and message.
+    setPassword("");
+    setStatus("");
+    setMessage("");
+    setStrength("0%");
   }
 
   return (
@@ -31,25 +47,37 @@ function PasswordChecker() {
           <form onSubmit={handleCheck} className="form-grid">
             <label>
               Password
-              <input type="password" value={password} onChange={(event) => setPassword(event.target.value)} placeholder="Enter a password" />
+              <input
+                type="password"
+                value={password}
+                onChange={(event) => setPassword(event.target.value)}
+                placeholder="Enter a password"
+              />
             </label>
 
             <div className="button-row">
               <button type="submit">Check Password</button>
-              <button type="button" className="secondary" onClick={handleClear}>Clear</button>
+              <button
+                type="button"
+                className="secondary"
+                onClick={handleClear}
+              >
+                Clear
+              </button>
             </div>
           </form>
 
-          {status && (
+          {(status || message) && (
             <div className="result-panel">
-              <p>Password Status: {status}</p>
+              {status && <p>Password Status: {status}</p>}
               <p>{message}</p>
+
               <div className="strength-bar">
-                <span style={{ width: "33%" }} />
+                <span style={{ width: strength }} />
               </div>
             </div>
           )}
-          </div>
+        </div>
       </div>
     </section>
   );
